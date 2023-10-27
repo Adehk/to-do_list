@@ -1,14 +1,15 @@
 import Task from "../task/Task";
 
-const Content = (props) => {
+const Content = ({ tasks, setTasks }) => {
   return (
     <ul className="todo__items">
-      {props.tasks.map((task) => (
+      {tasks.map((task) => (
         <div className="todo__item" key={task.id}>
           <Task
             value={task.value}
             id={task.id}
             date={new Date().toLocaleString().slice(0, -3)}
+            setTasks={setTasks}
           />
         </div>
       ))}
