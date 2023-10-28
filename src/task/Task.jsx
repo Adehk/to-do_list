@@ -4,7 +4,7 @@ const Task = ({ value, id, date, setTasks, completed }) => {
   const handleCompleteTask = (id) =>
     setTasks((prev) =>
       prev.map((item) =>
-        item.id === id ? { ...item, completed: !false } : item
+        item.id === id ? { ...item, completed: !item.completed } : item
       )
     );
   return (

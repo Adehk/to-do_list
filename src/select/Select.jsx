@@ -1,4 +1,4 @@
-const Select = () => {
+const Select = ({ tasks }) => {
   return (
     <select className="todo__options">
       <option value="all">Все</option>

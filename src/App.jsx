@@ -17,7 +17,7 @@ const App = () => {
   return (
     <div className="todo">
       <Input id={id} setId={setId} setTasks={setTasks} tasks={tasks} />
-      <Select />
+      <Select tasks={tasks}/>
       <Content tasks={tasks} setTasks={setTasks} />
     </div>
   );
