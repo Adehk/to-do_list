@@ -1,6 +1,12 @@
-const Task = ({ value, id, date, setTasks }) => {
-  const handleDeleteTask = (id) => console.log(id);
-  const handleCompleteTask = (id) => console.log(id);
+const Task = ({ value, id, date, setTasks, completed }) => {
+  const handleDeleteTask = (id) =>
+    setTasks((prev) => prev.filter((item) => item.id !== id));
+  const handleCompleteTask = (id) =>
+    setTasks((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, completed: !false } : item
+      )
+    );
   return (
     <div>
       <span className="todo__task">{value}</span>

@@ -11,14 +11,14 @@ const App = () => {
   );
   const [id, setId] = useState(
     localStorage.getItem("id") !== null
-      ? JSON.parse(localStorage.getItem("tasks"))
+      ? JSON.parse(localStorage.getItem("id"))
       : 0
   );
   return (
     <div className="todo">
       <Input id={id} setId={setId} setTasks={setTasks} tasks={tasks} />
       <Select />
-      <Content tasks={tasks} setTasks={setTasks}/>
+      <Content tasks={tasks} setTasks={setTasks} />
     </div>
   );
 };

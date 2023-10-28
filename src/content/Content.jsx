@@ -3,12 +3,16 @@ import Task from "../task/Task";
 const Content = ({ tasks, setTasks }) => {
   return (
     <ul className="todo__items">
-      {tasks.map((task) => (
-        <div className="todo__item" key={task.id}>
+      {tasks.map(({ id, value, completed }) => (
+        <div
+          className={"todo__item" + (completed === true ? " completed" : "")}
+          key={id}
+        >
           <Task
-            value={task.value}
-            id={task.id}
+            value={value}
+            id={id}
             date={new Date().toLocaleString().slice(0, -3)}
+            completed={completed}
             setTasks={setTasks}
           />
         </div>
