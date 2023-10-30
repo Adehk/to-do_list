@@ -8,7 +8,7 @@ const Task = ({ value, id, date, setTasks, completed }) => {
       )
     );
   return (
-    <div>
+    <div className={"todo__item" + (completed ? " completed" : "")} key={id}>
       <span className="todo__task">{value}</span>
       <span
         className="todo__action todo__action_complete"
